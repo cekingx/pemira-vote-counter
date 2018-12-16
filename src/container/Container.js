@@ -4,6 +4,7 @@ import { Flex, Box } from "@rebass/grid";
 
 const Title = styled.h1`
   font-size: 1.5em;
+  font-family: "Fira Code";
   text-align: center;
   color: palevioletred;
 `;
@@ -17,9 +18,16 @@ const Wrapper = styled.section`
 class Container extends Component {
   render() {
     return (
-      <Wrapper>
-        <Title>Hello World!</Title>
-      </Wrapper>
+      <Flex>
+        <Box width={1 / 2} px={2}>
+          <Wrapper>
+            <Title>Half Width</Title>
+          </Wrapper>
+        </Box>
+        <Box width={1 / 2} px={2}>
+          <Title>Half Width</Title>
+        </Box>
+      </Flex>
     );
   }
 }
