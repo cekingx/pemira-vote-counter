@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Container from "./container/Container";
+import Content from "./layouts/Content";
 
 class App extends Component {
   render() {
-    return <Container />;
+    return <Content />;
   }
 }
 
