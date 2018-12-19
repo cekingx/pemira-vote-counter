@@ -1,29 +1,56 @@
 import styled from "styled-components";
 import {
-  display,
+  space,
+  width,
+  color,
+  flex,
   flexWrap,
   flexDirection,
-  space,
-  color,
+  alignContent,
   justifyContent,
-  flex
+  justifyItems,
+  backgroundImage,
+  backgroundSize
 } from "styled-system";
 
-export const Container = styled.div`
-  ${display}
-  ${flexWrap}
-  ${flexDirection}
-  padding: 1em;
-  margin: 1em;
-`;
-
-export const Flex = styled.div`
-  ${space}
-  ${justifyContent}
-`;
-
 export const Box = styled.div`
+  box-sizing: border-box;
+  ${space}
+  ${width}
   ${color}
   ${flex}
-  ${space}
+  ${backgroundImage}
+  ${backgroundSize}
+  ${justifyContent}
+  ${justifyItems}
 `;
+
+Box.propsTypes = {
+  ...space.propsTypes,
+  ...width.propsTypes,
+  ...color.propsTypes,
+  ...flex.propsTypes,
+  ...justifyContent,
+  ...justifyItems,
+  ...backgroundImage,
+  ...backgroundSize
+};
+
+Box.displayName = "Box";
+
+export const Flex = styled(Box)`
+  display: flex;
+  ${flexWrap}
+  ${flexDirection}
+  ${justifyContent}
+  ${alignContent}
+`;
+
+Flex.propsTypes = {
+  ...flexWrap.propsTypes,
+  ...flexDirection.propsTypes,
+  ...justifyContent.propsTypes,
+  ...alignContent.propsTypes
+};
+
+Flex.displayName = "Flex";

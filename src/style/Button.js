@@ -1,14 +1,22 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  /* Adapt the colors based on primary prop */
-  background: ${props => (props.primary ? "palevioletred" : "white")};
-  color: ${props => (props.primary ? "white" : "palevioletred")};
-
-  font-size: 1rem;
-  font-family: "Fira Code";
+  background: #fb654e;
+  color: white;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: bold;
   margin: 1rem;
   padding: 0.5rem 1rem;
-  border: 2px solid palevioletred;
+  border: 0px;
   border-radius: 10px;
+  width: 90%;
+
+  :hover {
+    background: #f2476a;
+  }
+
+  :active {
+    background: #eb2d3a;
+  }
 `;

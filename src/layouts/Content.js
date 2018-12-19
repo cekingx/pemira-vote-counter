@@ -1,25 +1,39 @@
 import React, { Component } from "react";
-import { Container, Flex, Box } from "../style/Container";
+import { Box, Flex } from "../style/Container";
+import Card from "../components/Card";
+import { Title } from "../style/Text";
+
+const data = [
+  "Prastha Nugraha",
+  "Yonatan Adiwinata",
+  "Trio Putra",
+  "Mahardhika Adiningrat"
+];
 
 class Content extends Component {
   render() {
     return (
-      <Container display="flex" flexWrap="wrap" flexDirection="row">
-        <Flex p={2} m={2} justifyContent="center">
-          <Box p={2} m={2} flex="1 1 auto" color="white" bg="black">
-            Dirga
-          </Box>
-          <Box p={2} m={2} flex="1 1 auto" color="white" bg="black">
-            Dirga
-          </Box>
-          <Box p={2} m={2} flex="1 1 auto" color="white" bg="black">
-            Dirga
-          </Box>
-          <Box p={2} m={2} flex="1 1 auto" color="white" bg="black">
-            Dirga
+      <Flex flexDirection="column" flexWrap="wrap">
+        <Flex
+          flexDirection="row"
+          flex="1 1 auto"
+          p={3}
+          m={2}
+          justifyContent="center"
+        >
+          <Box justifyContent="center">
+            <Title>PEMIRA HMTI 2018</Title>
+            <Title>Besinergi Membangun TI Berintegritas</Title>
           </Box>
         </Flex>
-      </Container>
+        <Flex flexDirection="row" b flex="1 1 auto" p={3} m={2}>
+          {data.map((item, index) => (
+            <Box flex="1 1 auto" py={3} m="1em" key={index}>
+              <Card nama={item} />
+            </Box>
+          ))}
+        </Flex>
+      </Flex>
     );
   }
 }
