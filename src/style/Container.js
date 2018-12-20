@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {
   space,
   width,
+  height,
   color,
   flex,
   flexWrap,
@@ -10,7 +11,13 @@ import {
   justifyContent,
   justifyItems,
   backgroundImage,
-  backgroundSize
+  backgroundSize,
+  backgroundPosition,
+  backgroundRepeat,
+  borders,
+  borderColor,
+  borderRadius,
+  boxShadow
 } from "styled-system";
 
 export const Box = styled.div`
@@ -54,3 +61,46 @@ Flex.propsTypes = {
 };
 
 Flex.displayName = "Flex";
+
+export const Card = styled(Box)(
+  borders,
+  borderColor,
+  borderRadius,
+  boxShadow,
+  backgroundImage,
+  backgroundSize,
+  backgroundPosition,
+  backgroundRepeat
+);
+
+Card.propTypes = {
+  ...borders.propTypes,
+  ...borderColor.propTypes,
+  ...borderRadius.propTypes,
+  ...boxShadow.propTypes,
+  ...backgroundImage.propTypes,
+  ...backgroundSize.propTypes,
+  ...backgroundPosition.propTypes,
+  ...backgroundRepeat.propTypes
+};
+
+Card.displayName = "Card";
+
+export const Image = styled(Box)(
+  {
+    maxWidth: "100%",
+    height: "auto"
+  },
+  height,
+  borderRadius
+);
+
+Image.propTypes = {
+  ...height.propTypes,
+  ...borderRadius.propTypes
+};
+
+Image.defaultProps = {
+  as: "img",
+  m: 0
+};
