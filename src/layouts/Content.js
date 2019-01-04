@@ -28,12 +28,17 @@ class Content extends Component {
             <Title>Bersinergi Membangun TI Berkarakter</Title>
           </Box>
         </Flex>
-        <Flex flexDirection="row" b flex="1 1 auto" p={1} mt={1}>
+        <Flex flexDirection="row" flex="1 1 auto" p={1} mt={1}>
           {data.map((item, index) => (
             <Box flex="1 1 auto" py={1} m="1em" key={index}>
               <Cards nama={item.nama} src={item.img} />
             </Box>
           ))}
+        </Flex>
+        <Flex flexDirection="row" flex="1 1 auto" p={1} mt={1}>
+          <Box flex="1 1 auto" py={1} m="1em">
+            <Cards nama="Suara Tidak Sah" />
+          </Box>
         </Flex>
       </Flex>
     );
